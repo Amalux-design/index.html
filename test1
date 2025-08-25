@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amal Anilkumar | UI/UX Designer & Developer | In Alappuzha</title>
+    <meta name="description" content="Portfolio of Amal Anilkumar – UX designer, web developer, and creative professional. Also known as Amalux (Amal A.). Showcasing projects, design, and development skills.">
+    <meta name="keywords" content="Amal Anilkumar, Amal A, Amalux, UX designer, web developer, UI/UX, frontend developer, portfolio">
+    <meta name="author" content="Amal Anilkumar">
+    <meta name="robots" content="max-image-preview:none">
+    <!-- Favicon -->
+    
+    
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+
+    
+    <style>
+        * {
+            font-family: 'Andale Mono', monospace;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .sidebar-enter {
+            transform: translateY(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .sidebar-enter-active {
+            transform: translateY(0);
+        }
+        .overlay {
+            transition: opacity 0.3s ease-in-out;
+        }
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Hamburger to X animation */
+        .hamburger-open #line1 {
+            transform: rotate(45deg);
+        }
+        .hamburger-open #line2 {
+            opacity: 0;
+        }
+        .hamburger-open #line3 {
+            transform: rotate(-45deg);
+        }
+        
+        #line1, #line3 {
+            top: 50%;
+            transform-origin: center;
+        }
+        #line2 {
+            top: 50%;
+        }
+
+        /* NEW transparent header */
+    #header {
+  background-color: transparent !important;
+  backdrop-filter: none !important;
+  transition: none; /* remove animation if not needed */
+}
+
+
+
+
+
+        
+        .masonry-grid {
+            column-count: 1;
+            column-gap: 1.5rem;
+            column-fill: balance;
+        }
+        
+        @media (min-width: 640px) {
+            .masonry-grid {
+                column-count: 2;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .masonry-grid {
+                column-count: 3;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .masonry-grid {
+                column-count: 4;
+            }
+        }
+        
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .masonry-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .image-placeholder {
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+    </style>
+</head>
+<body class="bg-white text-white min-h-screen">
+
+    <!-- Fixed Header -->
+  <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-transparent">
+  <div class="flex justify-end items-center px-4 sm:px-6 py-3 sm:py-4">
+    <button id="hamburger" class="flex flex-col space-y-1 cursor-pointer relative w-6 h-6 justify-center items-center">
+      <div id="line1" class="hamburger-line w-5 sm:w-6 h-0.5 bg-black transition-all duration-300"></div>
+      <div id="line2" class="hamburger-line w-5 sm:w-6 h-0.5 bg-black transition-all duration-300"></div>
+      <div id="line3" class="hamburger-line w-5 sm:w-6 h-0.5 bg-black transition-all duration-300"></div>
+    </button>
+  </div>
+</header>
+
+
+    <!-- Sidebar Navigation -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black/50 z-[9999] opacity-0 invisible overlay">
+        <nav id="sidebar" class="fixed top-0 left-0 right-0 h-60 sm:h-80 bg-white z-[10000] sidebar-enter">
+            <div class="p-4 sm:p-6">
+                <div class="flex justify-between items-center mb-6 sm:mb-8">
+                    <a href="https://amalux-design.github.io/UI-UX-Portfolio/" class="text-lg sm:text-xl font-light hover:text-[#e0b868] text-black">
+                    Amal Anilkumar
+                  </a>
+                    <button id="close-x" class="text-black hover:text-[#e0b868] transition-colors cursor-pointer">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <ul class="space-y-4 sm:space-y-6 text-right">
+                    <li><a href="#home" class="block text-base sm:text-lg hover:text-[#e0b868] transition-colors sidebar-link text-right text-black">UI/ UX</a></li>
+                    <li><a href="about.html" class="block text-base sm:text-lg hover:text-[#e0b868] transition-colors sidebar-link text-right text-black">About</a></li>
+                    <li><a href="#projects-1" class="block text-base sm:text-lg hover:text-[#e0b868] transition-colors sidebar-link text-right text-black">Product Marketing</a></li>
+                    
+                    
+                    
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+
+
+    <!-- Main Gallery Section -->
+    <main class="px-6 py-8">
+        <div class="max-w-7xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-medium text-center mb-12 text-gray-800">
+                Creative Showcase
+            </h1>
+            
+            <div class="masonry-grid">
+                <!-- Portfolio Item 1 -->
+                <div class="masonry-item">
+                    <div class="image-placeholder" style="height: 280px;">
+                        <img src="" alt="Portfolio Item 1" class="w-full h-full object-cover" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 2 -->
+                <div class="masonry-item">
+                    <div class="image-placeholder" style="height: 350px;">
+                        <img src="" alt="Portfolio Item 2" class="w-full h-full object-cover" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 3 -->
+                <div class="masonry-item">
+                    <div class="image-placeholder" style="height: 240px;">
+                        <img src="" alt="Portfolio Item 3" class="w-full h-full object-cover" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 4 -->
+                <div class="masonry-item">
+                    <div class="image-placeholder" style="height: 320px;">
+                        <img src="" alt="Portfolio Item 4" class="w-full h-full object-cover" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 5 -->
+                <div class="masonry-item">
+                    <div class="image-placeholder" style="height: 290px;">
+                        <img src="" alt="Portfolio Item 5" class="w-full h-full object-cover" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 6 -->
+                <div class="masonry-item">
+                    <div class="image-placeholder" style="height: 260px;">
+                        <img src="" alt="Portfolio Item 6" class="w-full h-full object-cover" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 7 -->
+                <div class="masonry-item">
+                    <div class="image-placeholder" style="height: 340px;">
+                        <img src="" alt="Portfolio Item 7" class="w-full h-full object-cover" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 8 -->
+                <div class="masonry-item">
+                    <div class="image-placeholder" style="height: 270px;">
+                        <img src="" alt="Portfolio Item 8" class="w-full h-full object-cover" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 9 -->
+                <div class="masonry-item">
+                    <div class="image-placeholder" style="height: 310px;">
+                        <img src="" alt="Portfolio Item 9" class="w-full h-full object-cover" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 10 -->
+                <div class="masonry-item">
+                    <div class="image-placeholder" style="height: 250px;">
+                        <img src="" alt="Portfolio Item 10" class="w-full h-full object-cover" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 11 -->
+                <div class="masonry-item">
+                    <div class="image-placeholder" style="height: 330px;">
+                        <img src="" alt="Portfolio Item 11" class="w-full h-full object-cover" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 12 -->
+                <div class="masonry-item">
+                    <div class="image-placeholder" style="height: 280px;">
+                        <img src="" alt="Portfolio Item 12" class="w-full h-full object-cover" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+    const hamburger = document.getElementById('hamburger');
+    const closeX = document.getElementById('close-x');
+    const sidebar = document.getElementById('sidebar');
+    const sidebarOverlay = document.getElementById('sidebar-overlay');
+    const sidebarLinks = document.querySelectorAll('.sidebar-link');
+    const header = document.getElementById('header');
+    const lines = document.querySelectorAll('.hamburger-line');
+
+    function openSidebar() {
+      sidebarOverlay.classList.remove('opacity-0', 'invisible');
+      sidebar.classList.add('sidebar-enter-active');
+      sidebar.classList.remove('sidebar-enter');
+      hamburger.classList.add('hamburger-open');
+      // keep header transparent → remove background color change
+      header.style.backgroundColor = 'transparent';
+    }
+
+    function closeSidebarMenu() {
+      sidebarOverlay.classList.add('opacity-0', 'invisible');
+      sidebar.classList.remove('sidebar-enter-active');
+      sidebar.classList.add('sidebar-enter');
+      hamburger.classList.remove('hamburger-open');
+      // keep header transparent → remove background color change
+      header.style.backgroundColor = 'transparent';
+    }
+
+    hamburger.addEventListener('click', () => {
+      if (hamburger.classList.contains('hamburger-open')) {
+        closeSidebarMenu();
+      } else { 
+        openSidebar(); 
+      }
+    });
+
+    closeX.addEventListener('click', closeSidebarMenu);
+    sidebarOverlay.addEventListener('click', (e) => { 
+      if (e.target === sidebarOverlay) closeSidebarMenu(); 
+    });
+    sidebarLinks.forEach(link => { 
+      link.addEventListener('click', closeSidebarMenu); 
+    });
+</script>
+
+    
+    
+    // Add some dynamic loading effect
+        window.addEventListener('load', function() {
+            const items = document.querySelectorAll('.masonry-item');
+            items.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+    
+    </script>
